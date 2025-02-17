@@ -1,14 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Ubuntu', sans-serif;
+:root {
+    --box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.363);
 }
-
-body {
-    background-color: #feffff;
+body{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 18px;
+    padding: 0;
+    margin: 0;
     overflow-x: hidden;
 }
 
@@ -41,3 +40,200 @@ h5 {
     font-weight: 600;
 }
 
+.header-container {
+    box-sizing: border-box;
+    max-width: 1400px;
+    margin: 0 auto;
+    justify-content: space-between;
+    padding: 0 15px;
+    align-items: center;
+}
+
+.container {
+    box-sizing: border-box;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+.header {
+    height: 80px;
+    background-color: #ffff;
+    box-shadow: var(--box-shadow);
+}
+
+
+.honkaku-logo {
+    position: fixed;
+    top:0.5%;
+    left: 44.5%;
+}
+
+.home {
+    align-items: center;
+}
+
+.home-title {
+    margin-top: 210px;
+    margin-bottom: 58px;
+}
+
+.home-card {
+    width: 200px;
+    height: 325px;
+    border: 1px solid #00000027;
+    border-radius: 5px;
+    transition: all 0.5s ease;
+    background-color: #ffff;
+}
+
+.home-card:hover {
+    border: 1px solid #000
+}
+
+.title-card {
+    max-width: 185px;
+    margin-top: 20px;
+    min-height: 70px;
+}
+
+.card-img{
+    width: 125px;
+    height: 195px;
+}
+
+.price{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: -10px;
+}
+
+.home-btn {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 50px;
+    border: 1px solid #00000027;
+    border-radius: 5px;
+    background-image: url();
+    transition: all 0.4s ease;
+    z-index: 2;
+}
+
+.home-btn:hover{
+    border: 1px solid  #000;
+}
+
+.detail-image{
+    width: 650px;
+    height: 650px;
+}
+
+.detail-product{
+    margin-top: 80px;
+}
+
+.detail-description{
+    margin-left: 40px;
+    margin-top: 40px;
+}
+
+.detail-description p{
+    margin-top: 30px;
+    max-width: 700px;
+}
+
+.detail-description h2 span{
+    font-size: 56px;
+}
+
+.cart-discount{
+    margin-top: -10px;
+    font-weight: 600;
+}
+
+.cart-discount .price{
+    margin-top: -1px;
+}
+
+.line{
+    opacity: 0.7;
+    text-decoration: line-through;
+    font-weight: 300;
+}
+
+.cart-btn {
+    width: 180px;
+    height: 50px;
+    border: 1px solid #00000027;
+    border-radius: 5px;
+    transition: all 0.4s ease;
+    z-index: 2;
+    margin-top: 20px;
+}
+
+.cart-btn:hover{
+    border: 1px solid #000;
+}
+
+.main {
+    margin-left: 150px;
+}
+
+.main-title {
+    font-size: 36px;
+    margin-bottom: 10px;
+    margin-top: 65px;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 225px);
+    width: 100%;
+    max-width: 1300px;
+    justify-content: center;
+    justify-items: center;
+    column-gap: 0px;
+    row-gap: 10px;
+    margin: 0 auto;
+}
+
+.sidebar {
+    margin-top: 70px;
+}
+
+.llist{
+    margin-left: 80px;
+}
+
+.sidebar ul li{
+    font-size: 20px;
+    width: 165px;
+    height: 35px;
+    margin-bottom: 5px;
+}
+.sidebar ul li a{
+    margin-left: 15px;
+    width: 165px;
+}
+
+.sidebar ul{
+    margin-top: 20px;
+}
+
+.selected{
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.pagination {
+    display: flex;
+    position: absolute;
+    bottom: 0%;
+    left: 46%;
+    gap: 12px;
+    justify-content: center;
+}
+
+.disabled {
+    opacity: 0.2;
+}
