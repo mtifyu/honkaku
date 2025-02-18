@@ -1,7 +1,23 @@
 from django.shortcuts import render
+from django.contrib import auth
+from django.urls import reverse
+from django.http import HttpResponseRedirect
+from .forms import UserLoginForm
 
 def login(request):
-    return render(request, 'users/login.html')
+    if request.method == 'POST':
+        form = UserLoginForm(data=request.POST)
+        if form.is_valid():
+            username = request.POST['username']
+            password = request.POST['password']
+            user = auth.authenticate(username=username,
+                                     password=password)
+            if user: 
+                auth.login(request, user)
+                return HttpResponseRedirect(reverse('main:product'))
+    else:
+        form = UserLoginForm()
+    return render(request, 'users/login.html', {'form': form})
 
 def registration(request):
     return render(request, 'users/registration.html')
