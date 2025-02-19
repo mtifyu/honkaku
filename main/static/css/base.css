@@ -44,7 +44,7 @@ h5 {
     box-sizing: border-box;
     max-width: 1400px;
     margin: 0 auto;
-    justify-content: space-between;
+    justify-content: end;
     padding: 0 15px;
     align-items: center;
 }
@@ -64,8 +64,8 @@ h5 {
 
 .honkaku-logo {
     position: fixed;
-    top:0.5%;
-    left: 44.5%;
+    top: 20px;
+    right: 77%;
 }
 
 .home {
@@ -283,9 +283,8 @@ h5 {
     margin-bottom: 10px;
 }
 
-.cart-card img img {
-    width: 125px;
-    height: 125px;
+.cart-card-img img {
+    width: 80px;
     border: 1px solid #00000042;
 }
 

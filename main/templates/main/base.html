@@ -4,6 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="{% static 'img/honkaku.png' %}">
     <title>{% block title %}{% endblock title %}</title>
 
     {% comment %} bootstrap {% endcomment %}
@@ -17,6 +18,11 @@
   <body>
     <header class="header sticky-top">
       <div class="header-container d-flex">
+        <div class="header-logo">
+          <a href="/shop">
+            <img src="{% static 'img\logo.jpg' %}" alt="" class="honkaku-logo"/>
+          </a>
+        </div>
         <navbar class="header-nav pt-4">
           <ul class="header-list d-flex">
             <li>
@@ -27,14 +33,9 @@
             </li>
           </ul>
         </navbar>
-        <div class="header-logo">
-          <a href="/shop">
-            <img src="{% static 'img\logo.jpg' %}" alt="" class="honkaku-logo"/>
-          </a>
-        </div>
         <div class="header-profile pt-2">
           <a href="{% url "cart:cart_detail" %}"><img src="{% static "img/cart.svg" %}" class="grob" alt=""></a>
-          <a href="#" class="m-2">LOGIN</a>
+          <a href="{% url "users:login" %}" class="m-2">LOGIN</a>
           <p class="cart-quantity">
             {% with cart_quantity=cart|length %}
                 {% if cart_quantity > 0 %}
