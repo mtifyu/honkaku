@@ -18,7 +18,7 @@ def login(request):
                                      password=password)
             if user: 
                 auth.login(request, user)
-                return HttpResponseRedirect(reverse('main:product'))
+                return HttpResponseRedirect(reverse('main:product_list'))
     else:
         form = UserLoginForm()
     return render(request, 'users/login.html', {'form': form})
@@ -41,14 +41,14 @@ def registration(request):
 @login_required
 def profile(request):
     if request.method == 'POST':
-        form = ProfileForm(data=request.POST, isinstance=request.user,
+        form = ProfileForm(data=request.POST, instance=request.user,
                            files=request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile was changed')
             return HttpResponseRedirect(reverse('user:profile'))
     else:
-        form = ProfileForm(isinstance=request.user)
+        form = ProfileForm(instance=request.user)
 
     orders = Order.objects.filter(user=request.user).prefetch_related(
         Prefetch(
